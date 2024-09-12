@@ -1,4 +1,5 @@
 # FundamentosJS_230570
+<<<<<<< HEAD
 Proyecto de Clase para la Unidad 1 de la asignatura de Aplicaciones Web Orientadas a Servicios (AWOS)
 
 
@@ -18,3 +19,6 @@ Karen Lizbeth Negrete Hernández
 Unidad 1
 Aplicaciones Web Orientadas a Servicios
 Septiembre 2024
+=======
+Proyecto de Clase para la Unidad 1 de la asignatura de Aplicaciones Web Orientadas a Servicios (AWOS).
+>>>>>>> 98db28361fcfeff157f09675224732e0a24edf93
