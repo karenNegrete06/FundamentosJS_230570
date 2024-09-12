@@ -15,9 +15,9 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 |2.|Inicialización del Proyecto de Fundamentos de JS|Activa|
 
 ### Autor
-Karen Lizbeth Negrete Hernández
-Unidad 1
-Aplicaciones Web Orientadas a Servicios
-Septiembre 2024
+Karen Lizbeth Negrete Hernández <br>
+Unidad 1  <br>
+Aplicaciones Web Orientadas a Servicios  <br>
+Septiembre 2024 <br>
 
 Proyecto de Clase para la Unidad 1 de la asignatura de Aplicaciones Web Orientadas a Servicios (AWOS).
