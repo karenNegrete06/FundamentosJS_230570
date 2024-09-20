@@ -1,5 +1,5 @@
 # FundamentosJS_230570
-<<<<<<< HEAD
+
 Proyecto de Clase para la Unidad 1 de la asignatura de Aplicaciones Web Orientadas a Servicios (AWOS)
 
 
@@ -9,16 +9,15 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 
 ### Historial de Prácticas
 
-|No.|Descripción|Estatus|
-|--|--|--|
-|1.|Metodología de Evaluación| ✅Finalizada|
-|2.|Inicialización del Proyecto de Fundamentos de JS|Activa|
+|No.|Descripción|Potenciador|Estatus|
+|--|--|--|--|
+|1.|Metodología de Evaluación|1| ✅Finalizada|
+|2.|Inicialización del Proyecto de Fundamentos de JS|8|✅Finalizada|
+|3.|Ejercicio 01: Declaración de variables en JS|Pendiente|Activa|
 
 ### Autor
-Karen Lizbeth Negrete Hernández
-Unidad 1
-Aplicaciones Web Orientadas a Servicios
-Septiembre 2024
-=======
-Proyecto de Clase para la Unidad 1 de la asignatura de Aplicaciones Web Orientadas a Servicios (AWOS).
->>>>>>> 98db28361fcfeff157f09675224732e0a24edf93
+Karen Lizbeth Negrete Hernández <br>
+Unidad 1  <br>
+Aplicaciones Web Orientadas a Servicios  <br>
+Septiembre 2024 <br>
+
