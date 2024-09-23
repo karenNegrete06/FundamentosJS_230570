@@ -206,7 +206,7 @@ let fecha_ultimoPost;
 
 //Supongamos que el usuario: Idai Vargas Galindo, con correo electrónico 230574@utxicotepec.edu.mx desea ingresar con su contraseña: pass1234
 
-nombreUsuario = "230574@utxicotepec.edu.mx";
+nombreUsuario = "230570@utxicotepec.edu.mx";
 passUsuario = "pass1234";
 
 //En este momento de ejecución del sistema no sabemos su género, ni su estatus de relación sentimental.
@@ -234,16 +234,16 @@ console.log("Comparación de la identidad entre Undefined y Null:")
 console.log(
     (fecha_ultimoPost === estatusRelacionSentimental) ?
     "Ambas variables tiene el mismo valor y el mismo tipo de dato":
-    "Las variables tiene el mismo valor, pero no el mismo tipo de dato"
+    "Las variables tiene el mismo calor, pero no el mismo tipo de dato"
 );
 
+// 8. FUNCTION (Funciones)
+console.warn("--- Tipo de Dato FUNCTION (Función")
+//Declaramos una funnción que nos permita recibir un parametro, en este casó el nombre de la persona a saludar, y le enviamos un saludo, esta función le asignamos una cosntante.
+const saludar = function(nombre){return `Hola, ${nombre}!`}
 
+//Invocamos la función declarada
+console.log(saludar('Karen'));
 
-
-
-
-
-
-
-
-
+//Y que tipo de dato tiene esta constante
+console.log(`El tipo de dato de la constante saludar es: ${typeof(saludar)}`)
