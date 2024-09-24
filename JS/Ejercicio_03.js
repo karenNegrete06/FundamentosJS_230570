@@ -1,11 +1,11 @@
 // Repaso de Objetos
 
-const bg ="linear-grandient(11deg,rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 86%)";
-const style_console =`background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-sixe: 1.0rem; font-weight: bold`
+const bg = "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 86%)";
+const style_console =`background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`
 
 console.warn("Practixca 05: Repaso de Objetos en Java Script");
 
-console.log("%c1.- Variables Independientes ",style_console);
+console.log("%c1.- Variables Independientes ", style_console);
 
 let producto_Nombre="Computadora  Gammer Laptop 17\"";
 let producto_Marca="Asus";
@@ -54,7 +54,7 @@ console.log("%c2.- Variables Independientes ",style_console);
     }
 
     // Ahora leemos el objeto 
-    console.table(producto)
+    console.table(producto);
 
     // Para acceder a las propiedades del objeto utilizamos un "." y el nombre de la propiedad a leer.
 
@@ -100,7 +100,8 @@ console.log("%c2.- Variables Independientes ",style_console);
         Producto_Clave: 316,
         Comprador_Clave: 3216,
         Cantidad: 2,
-        Estatus: "Carrito de compra"
+        Estatus: "Carrito de compra",
+        TipoPago: "Tarjeta de credito"
     }
 
     // 
@@ -111,6 +112,55 @@ console.log("%c2.- Variables Independientes ",style_console);
     let Costo_compra=Producto_precio*pedido_cantidad;
 
     
-    console.log(`El cliente ha agregado a su carrito de compras ${pedido_cantidad} unidades, con un costo total de: ${Costo_compra}`)
+    console.log(`El cliente ha agregado a su carrito de compras ${pedido_cantidad} unidades, con un costo total de: ${Costo_compra}`);
     if(Costo_compra<Cliente_SaldoActual)
         console.log("El cliente tiene saldo suficiente");
+    
+
+    //Actualizar 
+
+    console.log("%c4 - Actualización de los valores de lasm propiedades de un objeto", style_console);
+
+    console.log(`El objeto actualmente tiene los siguentes valores ${producto2}`)
+    console.log(JSON.stringify(producto2,null,2));
+    console.log(`Por cuestiones de inflación el costo del prodiucto ha cambiado y debe ser actualizado .... de $6,915.50`)
+
+    producto2.Precio=6915.50;
+    console.log(`Los nuevos valores de Producto son: `)
+    console.log(producto2);
+
+    // ¿Puedo cambiar no solo el valor si no tambien el tipo de dato en JavaScript?
+    console.log("-------------------------------------")
+    console.log(`El objeto actualmente tiene los siguentes valores`)
+
+    let TipoDisponibilidad=typeof(producto2.Disponiblidad) 
+    console.log(`el tipo de dato de la disponibilidad es: ${TipoDisponibilidad}`)
+    console.log(JSON.stringify(producto2,null,2));
+    producto2.Disponiblidad="Si";
+    let nuevoTipoDisponibilidad=typeof(producto2.Disponiblidad)
+    console.log(producto2)
+    console.log(`el nuevo tipo de dato de la disponibilidad es: ${nuevoTipoDisponibilidad}`)
+
+    //Agregar nuevas propiedades al objeto
+
+    console.log("%c5 - Agregar nuevas propiedades al objeto", style_console);
+
+    //
+    console.log("Los datos actuales del Comprador son:")
+    console.table(Comprador);
+    Comprador[`Direción`]= "Av. Benito Juarez No. 1525, Interior 4D, Xicotepec de Juárez, Puebla, México"
+    Comprador[`Tipo`]="Nuevo Cliente"
+    Comprador[`ActividadesRecientes`]=true
+    Comprador[`TotalCompras`]=3516.25
+    console.log("Despues de haber agregado las propiedades Direccion, Tipo, ActividadesRecientes y TotalCompras.....")
+    console.table(Comprador);
+
+    // Eliminar propiedades existentes de un objeto
+
+    console.log("%c6.- Eliminar propiedades existentes de un objeto", style_console);
+
+    console.log("La estructura y valores del objeto PEDIDO son previas a la modificación")
+    console.table(Pedido)
+    delete Pedido.TipoPago
+    console.log("Despues de la modificación")
+    console.table(Pedido)
