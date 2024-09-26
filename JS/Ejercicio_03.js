@@ -39,6 +39,7 @@ console.log(`Los datos del PRODUCTO son: \n
 console.log("%c2.- Variables Independientes ",style_console);
     let producto= 
     {
+        ID: 3216,
         Nombre: "Tenis Deportivos",
         Marca: "Nke",
         Modelo: "Jodan ' 24",
@@ -70,6 +71,7 @@ console.log("%c2.- Variables Independientes ",style_console);
     console.log("%c3.- Destructuración de Objetos ",style_console);
     let producto2= 
     {
+        
         Clave: 316,
         Nombre: "Lentes para sol",
         Marca: "Oakley",
@@ -97,6 +99,7 @@ console.log("%c2.- Variables Independientes ",style_console);
     }
     let Pedido=
     {
+        ID: 5816,
         Producto_Clave: 316,
         Comprador_Clave: 3216,
         Cantidad: 2,
@@ -164,3 +167,112 @@ console.log("%c2.- Variables Independientes ",style_console);
     delete Pedido.TipoPago
     console.log("Despues de la modificación")
     console.table(Pedido)
+
+    //
+    
+    console.log("%c7.- Metodos para  controlar la mutailidad de losobjetos, congelación (FREEZE)", style_console);
+    // SI DESEAMOS NO PERMITIR QUE LOS OBJETOS SEAN MODIFICADOS NI EN ESTRUCTURA NI EN VALOR UTILIZAREMOS EL METODO FREEZE (CONGELAR)
+    console.log(`La estructura actual del objetoComprador es: `)
+    console.table(Comprador);
+    Object.freeze(Comprador);
+    //intentamos agregar, eliminar o modificar los valores de sus propiedades 
+    Comprador.FechaUltimaCompra = "05/09/2024 10:15:25" 
+    delete Comprador.Tipo;
+    Comprador.Direción= "Calle 16 de Septiembre #102, Col. Manantiales, Huachinango, Puebla, México";
+    console.log(`Verificamos si se realizaron los cambios en el objeto COMPRADOR: `)
+    console.table(Comprador);
+
+
+    console.log("%c8.- Metodos para  controlar la mutabilidad de los Objetos, Sellado (SEAL)", style_console);
+    // Sim embargo en el caso que desemos poder podificar los valores  del las  propiedades del Objeto, pero no su estructura, usaremos SEAL
+    console.log("Objeto antes de ser modificados: ")
+    console.table(Pedido);
+    // Sellamos el objeto
+    Object.seal(Pedido);
+    // Intentamos modificar su estructura 
+    Pedido[`FechaPedido`]="25/09/2024 11:05:03"
+    delete Pedido[`Cantidad`]
+    console.log(`Verificamos si se realizaron los cambios en el objeto Pedido:`)
+    console.table(Pedido);
+    // Ahora intentamos modificar el valor de las propiedades 
+    Pedido.Cantidad=5
+    console.log(`Verificamos si se realizaron los cambios en el Objeto PEDIDO: `)
+    console.table(Pedido);
+
+    console.log("%c9.- Desestructuración de 2 o más Objetos", style_console);
+
+    let {Precio: productoPrecio, Marca: ProductoMarca}= producto
+    let {Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, Tipo: clienteTipo}=Comprador
+
+    // Transformar valores cuantitativos en cualitativos
+
+    if(productoPrecio>2000)
+        productoPrecio="Caro"
+    else
+    productoPrecio="Barato"
+
+    if(clienteSaldo>0)
+        clienteSaldo="A favor"
+    else if (clienteSaldo<0)
+        clienteSaldo="En contra"
+    else
+    productoPrecio="Sin deuda"
+
+    // Transformar valores cualitativos en cuantitativos 
+    let clienteNivel;
+
+    if(clienteTipo=="Premium")
+        clienteNivel=1
+    if(clienteTipo=="Freemium")
+        clienteNivel=2
+    if(clienteTipo=="No identificado")
+        clienteNivel=3
+
+    // Clasificación al cliente por su país de origen
+
+    if(clientePais=="México")
+        clientePais="Nacional"
+    else
+    clientePais="Extranjero"
+
+    let datosClientePromociones={clienteCorreo, clientePais, clienteNivel, clienteSaldo, producto_Marca, productoPrecio}
+
+    // El nuevo objeto que creamos seria un ejemplo de la imformación que enviaremos al area de Marketing para la difusión de promociones
+    console.log("los datos del cliente y sus hábitos de compra son: ")
+    console.table(datosClientePromociones);
+
+
+    // Operaciones sobre Objetos
+    // Unión de Objetos
+    console.log("%c10.- Unión de Objetos usando el metodo de asignación (ASSING)", style_console);
+    
+    console.log("Imprimimos la estructura y valores de Objeto Producto")
+    console.table(producto);
+
+    console.log("Imprimimos la estructura y valores del Objeto Pedido")
+    console.table(Pedido);
+    // Suponiendo que el usuario ya realizo el pago el pedido se convertira en una VENTA  que requiere información de ambos objetos
+    const Venta = Object.assign(producto, Pedido);
+    console.log("Consultamos este nuevo objeto VENTA") 
+    console.table(Venta);
+
+
+
+
+
+
+
+
+    /*let spotifyUser={
+        name: "",
+        nickname: "",
+        email: "",
+        password: "",
+        rol: "",
+        since: "",
+    }*/
+
+
+    
+
+    
