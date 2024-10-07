@@ -15,7 +15,9 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 |2.|Inicialización del Proyecto de Fundamentos de JS|8|✅Finalizada|
 |3.|Ejercicio 01: Declaración de variables en JS|6|✅Finalizada|
 |4.|Ejercicio 02: Tipos de datos en JS|10|✅Finalizada|
-|5.|Ejercicio 03: Repaso de objetos en JS|0|Pendiente|
+|5.|Ejercicio 03: Objetos|19|✅Finalizada|
+|6.|Ejercicio 04: Arreglos|18|Activa|
+
 
 ### Autor
 Karen Lizbeth Negrete Hernández <br>

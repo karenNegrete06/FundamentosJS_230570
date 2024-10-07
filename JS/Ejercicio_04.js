@@ -14,7 +14,7 @@ const mesesAnio = ["enero","Febrero", "Marzo",  "Abril", "Mayo", "Junio", "Julio
 
 console.log("%c1.- Declaración de un arreglo ", style_console);
 console.log(mesesAnio);
-console.table(mesesAnio);
+console.table(mesesAnio)
  
 // Accede a los valores de u arreglo de datos para acceder al valor solo basta enviar la posición del dato que queremos dentro de los limites establecidos. Siendo el lite inferior 0 y el superior tamaño -1
 
@@ -118,20 +118,20 @@ console.table(estudiantes)
 
 console.log("¿Que pasa con los Mixtos?")
 console.log("El arregloMixto actualmente tiene los siguentes elementos:")
-console.table(arregloMixto);
+console.table(arregloMixto)
 console.log("Arregamos la palabra: \"Hola\", como nuevo elemento")
 arregloMixto.push("Hola");
 console.log("Y tambien agregamos el numero -3128817875487448, siendo este un BigInt")
 arregloMixto.push(BigInt(3128817875487448));
 console.log("Despues de esta dos operaciones el arreglo queda con los siguentes elementos: ")
-console.table(arregloMixto);
+console.table(arregloMixto)
 
 console.log("%c6.- Agregar un nuevo elemento a un arreglo (UNSHIFT) en la posicion inicial", style_console);
-console.table(estudiantes);
+console.table(estudiantes)
 console.log("Ahora  agregaremos a abishai Flores, al comienzo del arreglo.")
 estudiantes.unshift("Abishai Flores")
 console.log("La lista actual es: ")
-console.table(estudiantes);
+console.table(estudiantes)
 
 console.log("%c7.- Eliminar elementos de un arreglo en la ultima posicion (POP)", style_console);
 
@@ -140,7 +140,7 @@ console.table(estudiantes)
 console.log("Para este caso eliminar el elemento el arreglo quedo con de la siguente manera: ")
 estudiantes.pop();
 console.log("Despues de eliminar el arreglo quedo con de la siguente manera:")
-console.table(estudiantes);
+console.table(estudiantes)
 
 console.log("%c8.- Eliminar elementos de un arreglo en la primera posicion (SHIFT)", style_console);
 
@@ -149,7 +149,7 @@ console.table(estudiantes)
 console.log("Para este caso eliminaremos a Abishai Flores, en la primera posicion  ")
 estudiantes.shift();
 console.log("Despues de eliminar el arreglo quedo con de la siguente manera:")
-console.table(estudiantes);
+console.table(estudiantes)
 
 console.log("%c9.- Dividir un arreglo en un arreglo nuevo con posiciones definidas (SPLICE)", style_console);
 console.log("El arreglo original tiene los elementos: ")
@@ -177,12 +177,12 @@ console.table(estudiantes)
 console.log("Ahora vamos a insertar a \"Obed Guzman\" en los elementos de la posicion 0,1")
 estudiantes.splice(1,0,"Obed Guzman")
 console.log("Resultado en: ")
-console.table(estudiantes);
+console.table(estudiantes)
 
 console.log("Ahora vamos a remplazar al elemento \"Angel Rufino\" en los elementos de la posicion 0,1 por \"Brandon Leon\"")
 estudiantes.splice(0,1,"Brandon Leon")
 console.log("Resultado en: ")
-console.table(estudiantes);
+console.table(estudiantes)
 
 console.log("%c10.- Metodos para la manipulacion de arreglo INMUTABLES", style_console);
 
@@ -195,3 +195,61 @@ console.log(`El septimo signo Zodical es: ${signo7}`)
 
 // Congelamos el arreglo volviendo INMUTABLE;
 Object.freeze(signoZodiacales);
+
+// Filtrado de datos
+console.log("%c11.- Filtrado de Elemento dentro de un arreglo utilizando el metodo FILTER", style_console);
+console.table(estudiantes)
+estudiantes.push("Angel Rufino")
+estudiantes.push("Uriel Medina")
+estudiantes.push("Lorena Galindo")
+estudiantes.push("Esther Gonzales")
+estudiantes.push("Jonathan Ramirez")
+console.table(estudiantes)
+
+Object.freeze(estudiantes)
+//Filtar en un metodo que recorre los elementos de un arreglo haciendo alguna tarea en especifica, la que tenemos que considerar es que este nuevo arreglo resultante es un objeto nuevo que puede ser mutable
+console.log("Filtrado los primeros 5 elementos"); 
+let nuevoEstudiantes = estudiantes.filter((estudiante,index)=>index<5);
+ console.table(nuevoEstudiantes)
+
+ console.table(filtaPrimeros5(estudiantes));
+
+ //filtar a los estudiantes que su nombre tenga mas de de 15 caracteres
+ /*let nuevoEstudiantesNombre = estudiantes.filter((estudiante,index)=>index<5);*/
+
+ //Intentamos modificar el arreglo inmutable
+/* estudiantes.pop()
+ console.table(estudiantes)*/
+
+ //Intentamos modificar el nuevo arreglo que no ha sido congelado
+ nuevoEstudiantes.unshift("Diego Tecorralco")
+ console.table(nuevoEstudiantes)
+
+ function filtaPrimeros5(arregloEstudiantes)
+ {
+    let listaFiltrada=[]
+    for(let i=0; i<5; i++)
+    {
+     listaFiltrada.push(arregloEstudiantes[i]);
+    }
+    return listaFiltrada;
+
+ }
+
+ //Filtrado de datos - Transformando datos
+
+console.log("%c12.- Filtrado de Elemento dentro de un arreglo utilizando el metodo MAP, en el que nececitamos transformarlos", style_console);
+ console.log("Imprimimos los elementos actuales de signoZodiacales: ")
+ console.table(signoZodiacales)
+ // Que podemos hacer si necesitamos el mismo arreglo pero ahora con todos sus elementos con letras MAYUSCULAS
+
+ console.table(signoZodiacales.map(signoZodiacal=>signoZodiacal.toUpperCase()))
+
+ //Reduccion de elementos de un arreglo, se usa cuando debemos hacer opertaciones matematuicas a cuantitativas a un arreglo, como obtener  totales, la idea es reducir la lista a un valor más simplificado 
+ 
+ const costosListaCompras =[15,52.50,16.90,32.50,28,105,45.2,94.10]
+//Como podemos cualcular  el total de una lista de un carrito de compras 
+
+console.log("Los precios son:")
+console.table(costosListaCompras)
+console.log(`El total de la comora es: ${costosListaCompras.reduce((total,precio)=>total+precio,0).toFixed(2)}`)
