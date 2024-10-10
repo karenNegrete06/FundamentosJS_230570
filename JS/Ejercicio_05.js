@@ -139,3 +139,162 @@ switch(true)
 }
 
 console.log(`Dado que nacio en el año 2005 soy de la generacion: ${asignaGenracion(2005)}`);
+
+console.log("%c4.- Manejo de Excepciones (TRY/CATCH)",style_console);
+
+console.log("Intentamos dividir: 0/10, el resultado es: ")
+//En algunas ocaciones existian errores que no son culpa del programa, si no del usuario , la red el uso o inclusio de un middleware pero que si duda debemos controlar para evitar las fallas de ejecucion.
+
+try{ //intenta
+   let result=0/10; //dividir 0 entre 10
+   console.log(result)
+}
+catch
+{
+    console.log("ocurrio un error: "+error.message);
+}
+
+
+console.log("Intentamos dividir: 10/0, el resultado es: ")
+//En algunas ocaciones existian errores que no son culpa del programa, si no del usuario , la red el uso o inclusio de un middleware pero que si duda debemos controlar para evitar las fallas de ejecucion.
+
+try{ //intenta
+   let result=10/0; //dividir 10 entre 0
+   console.log(result)
+}
+catch
+{
+    console.log("ocurrio un error: "+error.message);
+}
+
+console.log("Intentamos dividir: a/0, el resultado es: ")
+//En algunas ocaciones existian errores que no son culpa del programa, si no del usuario , la red el uso o inclusio de un middleware pero que si duda debemos controlar para evitar las fallas de ejecucion.
+
+try{ //intenta
+   let result="a"/10; //dividir a entre 0
+   console.log(result)
+}
+catch
+{
+    console.log("ocurrio un error: "+error.message);
+}
+
+
+console.log("Intentamos dividir: a/10, el resultado es: ")
+//En algunas ocaciones existian errores que no son culpa del programa, si no del usuario , la red el uso o inclusio de un middleware pero que si duda debemos controlar para evitar las fallas de ejecucion.
+
+try{ //intenta
+   let result=a/10; //dividir a entre 0
+   console.log(result)
+}
+catch(error)
+{
+    console.log("ocurrio un error: "+error.message);
+}
+
+
+console.log("Intentamos dividir: el valor de la variable x/ entre el valor de la variable y, el resultado es: : ")
+//En algunas ocaciones existian errores que no son culpa del programa, si no del usuario , la red el uso o inclusio de un middleware pero que si duda debemos controlar para evitar las fallas de ejecucion.
+
+try{ //intenta
+   let x=8,y=2,result=x/y; //dividir a entre 0
+   console.log(result)
+}
+catch(error)
+{
+    console.log("ocurrio un error: "+error.message);
+}
+
+
+
+console.log("%c5.- Control de Ciclos (BREAK / CONTINUA) ",style_console);
+
+// En algunas ocaciones sera importante detener un ciclo de manera abrupta para controlar casos especiales en un ciclos
+
+console.log("Vamos a contar del 1 al 10...")
+for(let num=1; num<=10;num++)
+    console.log(num);
+//
+
+console.log("Ahora necesitamos que si llegas al 7 pares de contar... suponiendo que solo por hoy es de mala suerte")
+for(let num=1; num<=10;num++)
+    if(num==8)
+        break;
+    else
+
+    console.log(num);
+//
+console.log("Ahora necesitamos que si llegas al 7 te saltes ese numero y continues")
+ for(let num=1; num<=10;num++)
+        if(num==7)
+            continue;
+        else
+    
+        console.log(num);
+       
+    
+    
+console.log("%c6.- Ciclo Iterativo - (FOR) ",style_console);
+
+//Recorre de manera iterativa (i), de incremental o decremental
+
+console.log("Los dias de la semana son en orde ascendentes son: ")
+let dias=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+for(let i=0; i<dias.length;i++)
+   console.log("Ahora vamos a imprimir los meses en orden descendente...")
+const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+for(let i=11; i>=0; i--)
+    console.log(meses[i])
+
+//
+console.log("%c7.- Ciclo Condicionales - (WHILE) ",style_console);
+let finSemana=false;
+let mensaje=``;
+let j=0;
+while( j<dias.length )
+{
+    
+    
+    switch(j) /// Usamos 'j' para que coincidan con el indice
+    {
+        case 0:
+            finSemana=true;
+            mensaje="Mormingoooooooo... ZzZzZzZzZzZz (❁´◡`❁)"
+            break;
+        case 1:
+            finSemana=false;
+            mensaje="San lunes a chambiar.... (┬┬﹏┬┬)"
+            break;
+        case 2:
+            finSemana=false;
+            mensaje="Segundo dia de chamba a darle...."
+            break;
+            
+        case 3:
+            finSemana=false;
+            mensaje="Ombligo de chamba a darle..."
+            break;
+        case 4:
+            mensaje="Ya casii ya si juevesito..."
+            break;
+        case 5:
+            finSemana=false;
+            mensaje="Es hoy.. es Hoy.....>.><.<  ";
+            break;
+        case 6:
+            finSemana=true;
+            
+            mensaje="Sabadrink!! ☆*: .｡. o(≧▽≦)o .｡.:*☆ ";
+            
+            break;
+    }
+    if(!finSemana)
+    {
+        console.log(`Dia ${j} ${dias[j]}`)
+        console.log(`Mensaje del dia:  ${mensaje} `)
+    }
+     
+    j++;
+
+   
+}
