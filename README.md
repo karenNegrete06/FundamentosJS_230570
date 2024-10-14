@@ -16,7 +16,9 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 |3.|Ejercicio 01: Declaración de variables en JS|6|✅Finalizada|
 |4.|Ejercicio 02: Tipos de datos en JS|10|✅Finalizada|
 |5.|Ejercicio 03: Objetos|19|✅Finalizada|
-|6.|Ejercicio 04: Arreglos|18|Activa|
+|6.|Ejercicio 04: Arreglos|18|✅Finalizada|
+|7.|Ejercicio 05: Ciclos en JS|16|Pendiente|
+
 
 
 ### Autor
