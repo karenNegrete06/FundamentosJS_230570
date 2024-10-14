@@ -1,3 +1,5 @@
+
+
 const bg = "linear-gradient(11deg, rgba(199,20,199,1) 0%, rgba(20,30,150,1) 50%, rgba(180,2,240,1) 86%)";
 const style_console =`background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`
 
@@ -298,3 +300,107 @@ while( j<dias.length )
 
    
 }
+
+
+console.log("%c8.- Ciclo Condicionales, que se ejecuta al menos una vez  - (DO WHILE) ",style_console);
+
+// Simulamos una lista de episodios de una temporada 
+
+let episodios=[
+    "Episodio 1: crepusculo",
+    "Episodio 2: luna nueva",
+    "Episodio 3: eclipse",
+    "Episodio 4: amanecer parte 1",
+    "Episodio 5: aanecer parte 2"
+
+];
+
+let indice =0;
+let continuarViendo=true;//Esta variable simula la decision del usuario de continuar viendo 
+
+do{
+    console.log(`Reproduciendo ${episodios[indice]}`);
+
+    //Simulando la produccion del episodio 
+    indice++;
+    if(indice<episodios.length){
+        continuarViendo=confirm("¿Desea continuar con el siguiente episodio?");
+
+    }else{
+        continuarViendo=false;
+    }
+}while(continuarViendo && indice<episodios.length);
+
+console.log("Fin de la reproduccion.")
+
+
+//Ciclos para recorrer objetos iterales como arreglos ,cadenas y conjunto de datos
+console.log("%c9.- Ciclos para recorrer elementos finitos - (FOR ... OF) ",style_console);
+
+let seriesTrending =[
+    {nombre: "The witcher", temporada: 3, totalViewers: "1.5M",totalReprods: "3.0M" },
+    {nombre: "Riverdale", temporada: 2, totalViewers: "1.7M",totalReprods: "6.0M" },
+    {nombre: "Loki", temporada: 2, totalViewers: "2.5M",totalReprods: "7.0M" },
+    {nombre: "WandaVision", temporada: 1, totalViewers: "1.3M",totalReprods: "4.0M" },
+    {nombre: "CobraKai", temporada: 5, totalViewers: "1.9M",totalReprods: "2.0M" },
+];
+
+for(let serie of seriesTrending){
+    console.log(`Serie: ${serie.nombre},Temporada: ${serie.temporada}`)
+}
+try{
+    console.log(`La ultima serie leida fue: ${serie.nombre}`);
+    // No va a funcionar por la serie ya no existe ya que su alcance solo es durante el ciclo
+}
+catch(error)
+{
+   console.log("Mensaje de error: "+error.message)
+}
+
+
+console.log("%c10.- Ciclos para recuperrar las propiedades de elementos finitas - (FOR ... IN) ",style_console);
+
+for(let i in seriesTrending){
+    console.log(`serie ${parseInt(i)+1}:`);
+    for(let propiedad in seriesTrending[i]){
+        console.log(`${propiedad}: ${seriesTrending[i][propiedad]}`)
+    }
+    console.log(`--------------------`)
+}
+
+console.log("%c11.- Ciclos interrumpidos para cada uno de los elementos del arreglo (FOR ... EACH) ",style_console);
+
+let seriesTrending2=[
+    {nombre: "The witcher", temporada: 3, Viewers: 80000000,Reproducciones: 25000000  },
+    {nombre: "Riverdale", temporada: 2,  Viewers: 12000000,Reproducciones: 40000000 },
+    {nombre: "Loki", temporada: 2,  Viewers: 70000000,Reproducciones: 22000000  },
+    {nombre: "WandaVision", temporada: 1,  Viewers: 90000000,Reproducciones: 30000000  },
+    {nombre: "CobraKai", temporada: 5,  Viewers: 60000000,Reproducciones: 18000000 },
+    {nombre: "The walking Dead", temporada: 16,  Viewers: 16000000,Reproducciones: 36000000 },
+];
+
+seriesTrending2.forEach((serie,index)=>{
+    let calificacion=(serie.Reproducciones / serie.Viewers).toFixed(2);
+    console.log(`serie ${index+1}`);
+    console.log(`Nombre: ${serie.nombre}`);
+    console.log(`Temporada: ${serie.temporada}`);
+    console.log(`Viewers: ${serie.Viewers}`);
+    console.log(`Reproducciones: ${serie.Reproducciones}`);
+    console.log(`Calificacion: ${calificacion}`);
+    console.log(`........................`);
+});
+
+//Usando filter  para filtar , y map para tranformar la informacion 
+// Lista de series que queremos verificar
+let seriesDeseadas=["The walking Dead","Riverdale","Loki"];
+
+// Usando map e includes para filtrar y obtener los nombres de series con 3 temporadas
+let seriesConTresTemporadas=seriesTrending2
+.filter(serie => serie.temporada <=3)//filtramos las series que tiene3 temporadas
+.map(serie => serie.nombre)//Obtenemos solo los nombres de esas series
+.filter(nombre => seriesDeseadas.includes(nombre));//filtramos las que estan en la lista de series deseadas
+
+//Mostrar los resultados 
+
+console.log("series con 3 temporadas que estan en la lista deseada :");
+console.log(seriesConTresTemporadas);
