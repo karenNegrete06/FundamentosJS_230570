@@ -3,7 +3,7 @@
 const bg = "linear-gradient(11deg, rgba(199,20,199,1) 0%, rgba(20,30,150,1) 50%, rgba(180,2,240,1) 86%)";
 const style_console =`background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`
 
-console.warn("Practica 07: Arreglos en Java Script")
+console.warn("Practica 07: Ciclos y sentencias de control en JavaScript")
 console.log("%c1.- Si/Entonces ... (IF)",style_console);
 //Le indica al programa que hacer o que no en vase a una falso
 
